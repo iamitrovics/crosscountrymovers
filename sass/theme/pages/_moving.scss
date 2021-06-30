@@ -1,0 +1,493 @@
+/*===============================
+=       My Moving Plan          =
+===============================*/
+
+.moving__plan {
+	#navigation {
+		position: absolute!important;
+	}
+	
+    .nav-cta {
+        display: none;
+    }
+    #page-footer {
+    	.certifications {
+    		display: block!important;
+    	}
+    }
+}
+
+.moving-steps {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 8;
+    top: 71px;
+    padding: 18px 0 33px;
+    background-color: #f7f7f7;
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0,0,0,.07);
+    &:before,&:after {
+    	content: "";
+    	display: table;
+    }
+    &.sticky {
+    	position: fixed;
+    	top: 0;
+    }
+    ul {
+    	li {
+    		position: relative;
+		    display: inline-block;
+		    margin-right: 10%;
+		    width: 30px;
+		    height: 30px;
+		    background-color: #ededed;
+		    border-radius: 50%;
+		    z-index: 2;
+		    &:last-child {
+		    	margin-right: 0;
+		    	&:after {
+		    		display: none;
+		    	}
+		    }
+		    &:after {
+		    	width: 10rem;
+			    height: 2px;
+			    left: 30px;
+			    background-color: #ddd;
+			    content: "";
+			    position: absolute;
+			    @include centre(y);
+			    z-index: 1;
+		    }
+		    span {
+		    	@include centre(both);
+		    	font-size: 1em;
+    			color: #aaa;
+		    }
+		    &.active {
+		    	border: 2px solid $red;
+		    	span {
+		    		color: $red;
+		    	}
+		    }
+		    &.passed {
+		    	background-color: $red;
+		    	&:after {
+		    		background-color: $red;
+		    	}
+		    	span {
+		    		color: #fff;
+		    	}
+		    }
+		    a {
+		    	color: inherit;
+		    }
+		    i {
+		    	@include centre(x);
+		    	font-style: normal;
+			    font-size: 12px;
+			    text-align: center;
+			    width: auto;
+			    top: 40px;
+			    white-space: nowrap;
+		    }
+		    em {
+		    	font-style: normal;
+		    }
+    	}
+    }
+}
+.moving-body {
+	padding-top: 150px;
+	h1 {
+	    font-size: 24px;
+	    margin-bottom: 38px;
+	    text-align: center;
+	    font-family: $mark-reg;
+	}
+    
+}
+#moving-forms {
+	padding-bottom: 80px;
+	h2 {
+	    font-size: 24px;
+	    margin-bottom: 38px;
+	    text-align: center;
+	    font-family: $mark-reg;;
+	}
+	.nav-tabs {
+		border:0;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		li {
+			text-align: center;
+			border:0;
+			margin: 0;
+			width: 48%;
+			height: 240px;
+			margin-left: 2%;
+			margin-right: 2%;
+			border: 0;
+			border-radius:0;
+			&:first-of-type {
+				margin-left: 0;
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
+			a {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			    background-color: #f7f7f7;
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    flex-direction: column;
+			    border: 0;
+				border-radius:0;
+				padding:0;
+				padding-top: 40px;
+			    &.active {
+			    	background-color: #fff;
+				    box-shadow: 30px 30px 60px rgba(0,0,0,.1);
+				    transform: scale(1.1);
+				    .icon-success {
+				    	display: block;
+				    }
+			    }
+			    img {
+			    	width: 77px;
+			    }
+			    h3 {
+			    	font-family: $mark-reg;
+			    	font-size: 20px;
+			    	margin-top: 25px;
+			    	color: #000;
+			    }
+			    .icon-success {
+			    	display: none;
+			    	position: absolute;
+				    right: 20px;
+				    top: 20px;
+				    font-size: 40px;
+			    }
+			}
+		}
+	}
+	.tab-content {
+		max-width: 930px;
+		margin-left: auto;
+		margin-right: auto;
+	    margin-top: 175px;
+	    opacity: 0;
+	    @include animate-fade;
+	    &.show {
+	    	opacity: 1;
+	    }
+	    &:before, &:after {
+	    	content: "";
+    		display: table;
+    		clear: both;
+	    }
+	    /*&>.active {
+		    display: flex;
+		}
+		.tab-pane {
+			align-items: flex-end;
+		}*/
+	    .input-group {
+		    position: relative;
+		    float: left;
+		    text-align: left;
+		   	width: 24.02%;
+		    margin-right: 1.3%;
+		    &:last-of-type {
+		    	margin-right: 0;
+		    }
+		    label {
+		    	display: block;
+		    	font-size: 14px;
+			    margin-bottom: 8px;
+			    color: #444;
+		    }
+		    .input-wrapper {
+			    position: relative;
+			    width: 100%;
+			    height: 48px;
+			    border-radius: 5px;
+			    cursor: pointer;
+			    margin-bottom: 0;
+			    input {
+			    	width: 100%;
+				    height: 100%;
+				    padding: 0 16px 0 43px;
+				    font-size: 14px;
+				    background-color: #fff;
+				    cursor: pointer;
+				    font-family: $mark-reg;
+				    border:0;
+				    border-radius: 5px;
+				    background-color: #f2f2f2;
+			    }
+			    .bootstrap-select {
+					width: 100%;
+					position: relative;
+					.btn {
+						width: 100%;
+						display: block;
+						height: 48px;
+					    padding: 0 16px 0 43px;
+					    font-size: 14px;
+					    background-color: #fff;
+					    cursor: pointer;
+					    font-family: $mark-reg;
+					    border:0;
+					    border-radius: 5px;
+					    background-color: #f2f2f2;
+					}
+					.dropdown-toggle {
+						.filter-option {
+							height: initial!important;
+						}
+					}
+					.dropdown-menu {
+						box-shadow: 20px 20px 40px rgba(0,0,0,.1);
+						border:0;
+						border-radius: 0;
+						li {
+							a {
+								font-size: 14px;
+							    font-family: $mark-reg;
+							    color: #000;
+							    padding: 10px 16px;
+							    &.active, &:active {
+							    	background-color: $red;
+									color: #fff!important;
+							    }
+							}
+							&.selected {
+								a {
+									background-color: $red;
+									color: #fff!important;
+								}
+							}
+							&:focus {
+								background-color: $red;
+								color: #fff!important;
+								a {
+									color: #fff!important;
+								}
+							}
+						}
+					}
+			    }
+			    [class*="icon-"] {
+					@include centre(y);
+					left: 15px;
+				}
+				.count-input {
+					.input-group {
+					    display: flex;
+					    align-items: center;
+					    width: 100%;
+					    position: relative;
+					    .input-group-btn {
+						    @include centre(y);
+							&.decrease {
+						    	left: 15px;
+						    }
+						    &.increase {
+						    	right: 15px;
+						    }
+					    }
+					    
+					    button {
+						    border: 0;
+						    background: none;
+						    &:hover {
+						    	cursor: pointer;
+						    	i {
+						    		color: $red;
+						    	}
+						    }
+
+						    i {
+						    	color: #a7a9ac;
+    							font-size: 14px;
+    							@include animate-fade;
+						    }
+						}
+						input[type=text] {
+							padding:0;
+							text-align: center;
+							height: 48px;
+						}
+					}
+				}
+			}
+		}
+		.btn-submit {
+			display: block;
+			font-size: 16px;
+		    float: right;
+		    background-color: #49d277;
+		    border: none;
+		    color: #fff;
+		    width: 20%;
+		    height: 49px;
+		    text-transform: uppercase;
+		    border-radius: 5px;
+		    font-family: $mark-med;
+		    box-shadow: none;
+		    cursor: pointer;
+		    outline: none;
+		    @include animate-fade;
+		    margin-top: 50px;
+		    &:hover {
+				background-color: $red;
+		    }
+		}
+	}
+}
+
+
+.customer-info {
+	padding-bottom: 75px;
+	.container {
+		max-width: 530px;
+	}
+    .form-group {
+        margin-bottom: 23px;
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            @include input-style;
+        }
+        textarea {
+            height: 220px;
+            padding: 20px 16px;
+        }
+    }
+    .action-btns {
+    	display: flex;
+    	align-items: center;
+    	margin-top: 30px;
+    	a {
+    		display: inline-block;
+	        height: 48px;
+	        line-height: 48px;
+	        padding-left: 50px;
+	        padding-right: 50px;
+	        border: 1px solid #858585;
+		    background-color: #fff;
+		    color: #858585;
+	        font-family: $mark-med;
+	        font-size: 1em;
+	        border-radius: 5px;
+	        cursor: pointer;
+	        @include animate-fade;
+	        &:hover {
+	            background-color: $red;
+	            border-color: $red;
+	            color: #fff;
+	        }
+    	}
+    	input[type=submit] {
+	    	margin-left: auto;
+	        display: inline-block;
+	        height: 48px;
+	        line-height: 48px;
+	        padding-left: 50px;
+	        padding-right: 50px;
+	        border: none;
+	        background-color: #49d277;
+	        font-family: $mark-med;
+	        font-size: 1em;
+	        color: #fff;
+	        border-radius: 5px;
+	        cursor: pointer;
+	        @include animate-fade;
+	        &:hover {
+	            background-color: $red;
+	        }
+	    }
+    }
+}
+
+.my-car-content {
+	.clear-info {
+		position: relative;
+	    margin-bottom: 80px;
+	    padding: 40px 32px 44px 74px;
+	    box-shadow: 20px 20px 40px rgba(0,0,0,.05);
+	    display: flex;
+	    align-items: center;
+	    .clear-info-in {
+	    	padding-right: 40px;
+	    	width: 60%;
+	    }
+	    .icon-info {
+	    	@include centre(y);
+	    	left: 20px;
+	    	font-size: 33px;
+	    	display: flex;
+	    }
+	    .clear-btns {
+	    	margin-left: auto;
+	    	display: flex;
+	    	align-items: center;
+	    	margin-top: 30px;
+	    	button.skip {
+	    		display: inline-block;
+		        height: 48px;
+		        line-height: 48px;
+		        padding-left: 50px;
+		        padding-right: 50px;
+		        border: 1px solid #858585;
+			    background-color: #fff;
+			    color: #858585;
+		        font-family: $mark-med;
+		        font-size: 1em;
+		        border-radius: 5px;
+		        cursor: pointer;
+		        @include animate-fade;
+		        margin-right: 15px;
+		        &:hover {
+		            background-color: $red;
+		            border-color: $red;
+		            color: #fff;
+		        }
+	    	}
+	    	button.clear {
+		    	margin-left: auto;
+		        display: inline-block;
+		        height: 48px;
+		        line-height: 48px;
+		        padding-left: 50px;
+		        padding-right: 50px;
+		        border: none;
+		        font-family: $mark-med;
+		        font-size: 1em;
+		        color: #fff;
+		        border-radius: 5px;
+		        cursor: pointer;
+		        @include animate-fade;
+		        background-color: #616161;
+				border: 1px solid #616161;
+		        &:hover {
+		            background-color: $red;
+		        }
+		        &:disabled {
+		        	opacity: .6;
+    				cursor: not-allowed;
+    				&:hover {
+			            background-color:  #616161;
+			        }
+		        }
+		    }
+	    }
+	}
+}
