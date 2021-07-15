@@ -142,6 +142,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         <div class="video__holder">
                                             <?php the_sub_field('embedded_code'); ?>
                                         </div>	
+
+                                    <?php elseif( get_row_layout() == 'quote_cta' ): ?>
+
+                                        <div class="quote-cta--single">
+                                            <span class="title"><?php the_sub_field('cta_title'); ?></span>
+                                            <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?></a>
+                                        </div>
+                                        <!-- // single  -->                                              
                                         
                                     <?php elseif( get_row_layout() == 'accordion' ): ?>	
 
@@ -175,41 +183,60 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                         </div>
                         <!-- // conten  -->
-                    </div>
-                    <!-- /.col-md-12 -->
-                </div>
-                <!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="blog-single-autor">
-                            <div class="bsa-in">
-                                <div class="avatar-box">
-                                    <!-- <img src="<?php bloginfo('template_directory'); ?>/img/misc/avatar.jpg"> -->
-                                </div>
-                                <!-- /.avatar-box -->
-                                <div class="author-info">
 
-                                <?php while ( have_posts() ) : the_post(); ?>
-                                <h4><?php the_author(); ?></h4>
-                                <p><?php echo nl2br( get_the_author_meta( 'description' ) ); ?></p>
-                                <?php endwhile; // end of the loop. ?> 
-                                    
-                                </div>
-                                <!-- /.author-info -->
-                            </div>
-                            <!-- /.bsa-in -->
-                        </div>
-                        <!-- /.blog-single-autor -->
                     </div>
                     <!-- /.col-md-12 -->
                 </div>
                 <!-- /.row -->
+                
             </div>
             <!-- /.container -->
         </div>
         <!-- /.blog-single-text -->
     </div>
     <!-- /#blog-single -->
+
+    <div id="bottom-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+
+                    <?php echo do_shortcode('[gravityform id="7" title="false" description="false" ajax="true"]'); ?>
+
+                </div>
+            </div>
+        </div>
+        <!-- // container  -->
+    </div>
+    <!-- // form  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="blog-single-autor">
+                    <div class="bsa-in">
+                        <div class="avatar-box">
+                            <!-- <img src="<?php bloginfo('template_directory'); ?>/img/misc/avatar.jpg"> -->
+                        </div>
+                        <!-- /.avatar-box -->
+                        <div class="author-info">
+
+                        <?php while ( have_posts() ) : the_post(); ?>
+                        <h4><?php the_author(); ?></h4>
+                        <p><?php echo nl2br( get_the_author_meta( 'description' ) ); ?></p>
+                        <?php endwhile; // end of the loop. ?> 
+                            
+                        </div>
+                        <!-- /.author-info -->
+                    </div>
+                    <!-- /.bsa-in -->
+                </div>
+                <!-- /.blog-single-autor -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->    
+    </div>
 
     <section class="similar-posts">
         <div class="container">

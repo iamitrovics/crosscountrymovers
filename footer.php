@@ -101,6 +101,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php wp_footer(); ?>
 
+<?php if( get_field('footer_code_snippet', 'options') ): ?>
+    <?php the_field('footer_code_snippet', 'options'); ?>
+<?php endif; ?>
+
 </body>
 
 </html>

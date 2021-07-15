@@ -188,6 +188,14 @@
             font-size: 1.125em;
         }
     }
+    .video__holder {
+        text-align: center;
+        iframe {
+            max-width: 100%;
+            display: block;
+            margin:0px auto;
+        }
+    }
     .blog-single-text {
         padding: 30px 0 80px;
         @include breakpoint (desktop) {
@@ -209,8 +217,9 @@
         p {
             font-family: $mark-reg;
             font-size: 1em;
-            margin-bottom: 16px;
+            margin-bottom: 30px;
             a {
+                color:$red;
                 text-decoration: none;
             }
         }
@@ -221,11 +230,19 @@
             margin-bottom: 20px;
         }
         ul {
+            margin-bottom: 30px;
             li {
                 display: block;
                 margin-left: 14px;
                 font-size: 0.875em;
                 line-height: 1.4;
+                a {
+                    color:$red;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }                
                 &:before {
                     content: "\2022";
                     color: $red;
@@ -236,39 +253,42 @@
                 }
             }
         }
-        .blog-single-autor {
-            width: 100%;
-            margin-top: 100px;
-            padding: 50px 45px 37px;
-            box-shadow: 20px 20px 40px rgba(0,0,0,.03);
-            @include breakpoint (desktop) {
-                margin-top: 80px;
+
+    }
+}
+
+.blog-single-autor {
+    width: 100%;
+    margin-top: 100px;
+    padding: 50px 45px 37px;
+    box-shadow: 20px 20px 40px rgba(0,0,0,.03);
+    margin-bottom: 100px;
+    @include breakpoint (desktop) {
+        margin-top: 80px;
+    }
+    @include media-breakpoint-only(lg) {
+        margin-top: 60px;
+    }
+    @include media-breakpoint-down(md) {
+        margin-top: 40px;
+    }
+    .bsa-in {
+        display: flex;
+        align-items: flex-top;
+        .avatar-box {
+            width: 80px;
+            img {
+                border-radius: 50%;
+                width: 100%;
             }
-            @include media-breakpoint-only(lg) {
-                margin-top: 60px;
-            }
-            @include media-breakpoint-down(md) {
-                margin-top: 40px;
-            }
-            .bsa-in {
-                display: flex;
-                align-items: flex-top;
-                .avatar-box {
-                    width: 80px;
-                    img {
-                        border-radius: 50%;
-                        width: 100%;
-                    }
-                }
-                .author-info {
-                    padding-left: 22px;
-                    h4 {
-                        font-family: $mark-bold;
-                        margin-bottom: 16px;
-                        font-size: 1.250em;
-                        color: #000;
-                    }
-                }
+        }
+        .author-info {
+            padding-left: 22px;
+            h4 {
+                font-family: $mark-bold;
+                margin-bottom: 16px;
+                font-size: 1.250em;
+                color: #000;
             }
         }
     }
@@ -338,5 +358,72 @@
             }
 
         }
+    }
+}
+
+.quote-cta--single {
+    text-align: center;
+    padding:35px;
+    border-radius: 12px;
+    background:#eceae5;
+    margin-bottom: 40px;
+    span.title {
+        display: block;
+        @include heading-text;
+    }
+    a.btn-cta {
+        width: 240px;
+        text-align: center;
+        display: inline-block;
+        height: 56px;
+        line-height: 56px;
+        background:$red;
+        color:$white;
+        border-radius: 9px;
+        font-size: 16px;
+        font-family: $mark-med;
+    }
+}
+
+#bottom-form {
+    margin-top: -90px;
+    margin-bottom: 40px;
+    #gform_wrapper_7 {
+        padding: 41px 56px 34px;
+        background: #ededed;
+        box-shadow: 15px 15px 20px rgb(0 0 0 / 16%);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        padding-bottom: 70px;
+    }
+    input {
+        background:$white;
+    }
+    select {
+        background:$white;
+    }
+    h5 {
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+    input[type="submit"] {
+		font-size: 16px;
+		float: left;
+		background-color: #3dd6f5;
+		border: none;
+		color: #fff;
+		height: 49px;
+		text-transform: uppercase;
+		border-radius: 5px;
+		font-family: "Mark Medium";
+		box-shadow: none;
+		cursor: pointer;
+		outline: none;
+		transition: 0.25s ease-in-out;
+		width: 230px !important;		
+		&:hover {
+			background-color: #ee3f23;
+		}        
     }
 }

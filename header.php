@@ -19,20 +19,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="icon" type="image/png"  href="<?php echo get_template_directory_uri(); ?>/img/ico/favicon.png">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<meta name="ahrefs-site-verification" content="b6d355d34cf2473a151d4e7ec88ef43d1605fe1652e09c0e20b9c0f07a7e0e27">
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123487231-2"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'UA-123487231-2');
-	</script>	
+	<?php if( get_field('head_code_snippet', 'options') ): ?>
+		<?php the_field('head_code_snippet', 'options'); ?>
+	<?php endif; ?>	
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
+
+<?php if( get_field('body_code_snippet', 'options') ): ?>
+	<?php the_field('body_code_snippet', 'options'); ?>
+<?php endif; ?>
 
 <div class="wraper">
 	<div class="menu-overlay"></div>
