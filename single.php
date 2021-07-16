@@ -42,7 +42,13 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p><?php echo get_the_date(); ?></p>
+                        <div class="info">
+                            <p>Posted in 
+                            <?php the_category( ',' ); ?>
+                            on <?php echo get_the_date(); ?></p>
+                            <p>By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></p>
+                        </div>
+                        <!-- /.info -->
                     </div>
                     <!-- /.col-md-12 -->
                 </div>

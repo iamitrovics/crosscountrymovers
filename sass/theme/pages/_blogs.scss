@@ -185,7 +185,14 @@
     }
     .blog-single-info {
         p {
-            font-size: 1.125em;
+            font-size: 1em;
+            a {
+                color: $red;
+                &:hover {
+                    color: $hover;
+                    text-decoration: none;
+                }
+            }
         }
     }
     .video__holder {
