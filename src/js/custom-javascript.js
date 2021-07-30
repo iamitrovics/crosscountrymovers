@@ -184,5 +184,8 @@
         $('#top__mobile a').click(function(){
           $(this).toggleClass('open');
         });
+
+        $('.blog__main a').attr("target","_blank");
+
     });
 })(jQuery);
