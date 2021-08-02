@@ -25,7 +25,7 @@ get_header(); ?>
     <div id="about-page">
         <section class="about-content">
             <div class="container">
-                <div class="about-video">
+                <div class="about-featured">
 
                     <?php
                     $imageID = get_field('video_thumbnail_about_page');
@@ -33,14 +33,10 @@ get_header(); ?>
                     $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
                     ?> 
 
-                    <div class="video-box" style="background-image: url(<?php echo $image[0]; ?>);">
-                        <a class="various fancybox.iframe" href="<?php the_field('video_url_about_page'); ?>?autoplay=1">
-                            <i class="icon-play"></i>
-                        </a>
-                    </div>
-                    <!-- /.video-box -->
+                    <div class="about-featured-box" style="background-image: url(<?php echo $image[0]; ?>);"></div>
+                    <!-- /.about-video-box -->
                 </div>
-                <!-- /.about-video -->
+                <!-- /.about-featured -->
                 <div class="about-text">
                     <div class="about-box">
                         <h3><?php the_field('main_title_about_content_page'); ?></h3>
