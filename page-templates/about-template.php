@@ -28,7 +28,7 @@ get_header(); ?>
                 <div class="about-featured">
 
                     <?php
-                    $imageID = get_field('video_thumbnail_about_page');
+                    $imageID = get_field('about_featured_about_page');
                     $image = wp_get_attachment_image_src( $imageID, 'video-image' );
                     $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
                     ?> 
