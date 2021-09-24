@@ -46,7 +46,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <p>Posted in 
                             <?php the_category( ',' ); ?>
                             on <?php echo get_the_date(); ?></p>
-                            <p>By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></p>
                         </div>
                         <!-- /.info -->
                     </div>
@@ -189,6 +188,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                         </div>
                         <!-- // conten  -->
+                        <div class="blog-single-autor">
+                    <div class="author-desc">
+                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+                        <div class="author-content">
+                            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+                            <p><?php the_author_description(); ?></p>
+                        </div>
+                        <!-- /.author-content -->
+                    </div>
+                </div>
+                <!-- /.blog-single-autor -->
 
                     </div>
                     <!-- /.col-md-12 -->
@@ -201,6 +211,16 @@ $container = get_theme_mod( 'understrap_container_type' );
         <!-- /.blog-single-text -->
     </div>
     <!-- /#blog-single -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->    
+    </div>
 
     <div id="bottom-form">
         <div class="container">
@@ -215,34 +235,6 @@ $container = get_theme_mod( 'understrap_container_type' );
         <!-- // container  -->
     </div>
     <!-- // form  -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="blog-single-autor">
-                    <div class="bsa-in">
-                        <div class="avatar-box">
-                            <!-- <img src="<?php bloginfo('template_directory'); ?>/img/misc/avatar.jpg"> -->
-                        </div>
-                        <!-- /.avatar-box -->
-                        <div class="author-info">
-
-                        <?php while ( have_posts() ) : the_post(); ?>
-                        <h4><?php the_author(); ?></h4>
-                        <p><?php echo nl2br( get_the_author_meta( 'description' ) ); ?></p>
-                        <?php endwhile; // end of the loop. ?> 
-                            
-                        </div>
-                        <!-- /.author-info -->
-                    </div>
-                    <!-- /.bsa-in -->
-                </div>
-                <!-- /.blog-single-autor -->
-            </div>
-            <!-- /.col-md-12 -->
-        </div>
-        <!-- /.row -->    
-    </div>
 
     <section class="similar-posts">
         <div class="container">
