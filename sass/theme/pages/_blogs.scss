@@ -279,8 +279,8 @@
                 color:$orange;
             }
             p {
-                margin-bottom: 0;
-                font-size: 12px;
+                margin-bottom: 0 !important;
+                font-size: 12px !important;
                 font-style: italic;
                 line-height: 1.3;
             }
