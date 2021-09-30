@@ -262,7 +262,24 @@
                 }
             }
         }
-
+        .single-table {
+            margin-bottom: 60px;
+            @include media-breakpoint-down(sm) {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            th {
+                border: 1px solid;
+                background: rgba($red, 0.5);
+                color: #000;
+                padding: 3px 10px;
+            }
+            td {
+                border: 1px solid;
+                padding: 3px 10px;
+            }
+        }
     }
 }
 
@@ -297,7 +314,7 @@
 }
 
 .similar-posts {
-    padding-bottom: 85px;
+    padding-bottom: 50px;
     @include breakpoint (desktop) {
         padding-bottom: 70px;
     }
