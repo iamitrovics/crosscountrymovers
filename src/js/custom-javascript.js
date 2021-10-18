@@ -201,6 +201,43 @@
           $(this).toggleClass('open');
         });
 
+
+        $('#nav-slider').slick({
+          infinite: false,
+          speed: 300,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+          autoplay: true,
+          infinite: true,
+          autoplaySpeed: 4000,
+          responsive: [{
+                  breakpoint: 1199,
+                  settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 1,
+                  }
+              },
+              {
+                  breakpoint: 991,
+                  settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 1,
+                  }
+              },
+
+              {
+                  breakpoint: 600,
+                  settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                  }
+              },
+
+          ]
+      });   
+
         $('.blog__main a').attr("target","_blank");
 
     });

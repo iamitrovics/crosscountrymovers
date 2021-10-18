@@ -179,7 +179,10 @@
         padding: 20px 0px;
     }
     .container  {
-        max-width: 730px;
+        max-width: 940px;
+        @include media-breakpoint-only(md) {
+            max-width: 740px;
+        }
         img {
             width: 100%;
         }
@@ -844,4 +847,143 @@
             }
         }
     }
+}
+
+#post-nav {
+    .container {
+        width: 100%;
+        position: relative;   
+    }
+    .post-wrapper {
+        position: relative;
+        background: #ddf3cd;
+        padding:35px;
+        border-radius: 9px;
+        max-width: 940px;
+        margin-left: auto;
+        margin-right: auto;    
+        margin-top: 30px;    
+        padding-bottom: 5px;
+    } 
+    #nav-slider {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+            width: 20%;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                width: 50%;
+            }    
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                &.active {
+                    background:#3c8741;
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                    span {
+                        color:$white!important;
+                    }
+                }
+            }        
+            .nav-col {
+                text-align: center;
+                height: 100%;
+                &:hover {
+                    span {
+                        color:$green;
+                    }
+                }
+                .icon {
+                    margin:0px auto;
+                    width: 66px;
+                    height: 66px;
+                    border-radius: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    img {
+                        @include centre(both);
+                        // filter: brightness(0) invert(1);
+                    }                
+                }
+                span {
+                    display: block;
+                    margin-top: 15px;
+                    font-size: 1em;
+                    line-height: 1.222;
+                    @include animate-fade;
+                    text-transform: uppercase;
+                    font-family: $font-heading;
+                    font-size: 15px;
+                    color:$black;                    
+                }
+            }
+        }
+    }    
+}
+
+#post-navi {
+    margin-bottom: 50px;
+    .container {
+        width: 100%;
+        position: relative;
+    }
+    .post-wrapper {
+        position: relative;
+        background: #fff;
+        padding:20px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-radius: 4px;
+        box-shadow: 20px 40px 60px rgb(0 0 0 / 10%);
+    }
+    #nav-slider {
+        .item {
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            .nav-col {
+                text-align: center;
+                height: 100%;
+                &:hover {
+                    span {
+                        color:$red;
+                    }
+                }
+                .icon {
+                    margin:0px auto;
+                    width: 66px;
+                    height: 66px;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    margin-bottom: 10px;
+                    img {
+                        @include centre(both);
+                        width: 52px;
+                        height: auto;
+                        object-fit: inherit;
+                        // filter: brightness(0) invert(1);
+                    }                
+                }
+                span {
+                    display: block;
+                    font-family: "Mark Bold";
+                    margin-bottom: 20px;
+                    font-size: 1.15em;
+                    line-height: 1;
+                    color: #000;                  
+                }
+            }
+        }
+    }    
 }
