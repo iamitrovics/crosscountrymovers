@@ -375,6 +375,33 @@
     }
 }
 
+#services {
+    background-color: transparent;
+    &.services-blog-module {
+        padding: 0;
+        margin-bottom: 30px;
+        .services-list {
+            flex-wrap: nowrap;
+            @include media-breakpoint-down(md) {
+                flex-wrap: wrap;
+            }
+            .service-box {
+                padding: 25px;
+                border: 1px solid $red;
+                margin: 0 5px;
+                border-radius: 12px;
+                background-color: #f8f8f8;
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 20px;
+                }
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
 .similar-posts {
     padding-bottom: 50px;
     @include breakpoint (desktop) {
