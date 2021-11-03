@@ -284,6 +284,82 @@
             }
         }
     }
+    .content__accordion {
+        margin-bottom: 30px;
+        h2 {
+            margin-bottom: 15px;
+        }
+        .faq-wrap {
+            margin-bottom: 10px;
+        }
+        h3 {
+            margin:0;
+            border:0;
+            position: relative;
+            padding: 22px 20px;
+            font-size: 1em;
+            line-height: 1!important;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #616161!important;
+            font-family: $mark-reg;
+            text-align: left;
+            padding-right: 100px;
+            @include animate-fade;
+            margin-bottom: 10px;
+            @include media-breakpoint-down(md) {
+                padding-right: 60px;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &:focus {
+                outline: none!important;
+            }
+            &:before, &:after  {
+                @include centre(y);
+                background-color: #fff;
+                content: "";
+                right: 30px;
+                @include animate-fade;
+                @include media-breakpoint-down(md) {
+                    right: 20px;
+                }
+            }
+            &:before {
+                right: 37px;
+                width: 1px;
+                height: 15px;
+                @include media-breakpoint-down(md) {
+                    right: 27px;
+                }
+            }
+            &:after {
+                width: 15px;
+                height: 1px;
+            }
+            &.ui-state-active {
+                background-color: $red!important;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                &:before {
+                    opacity: 0;
+                }
+            }
+        }
+        .ui-accordion-content {
+            border:0;
+            padding: 48px 34px 50px;
+            background-color: #fff;
+            @include media-breakpoint-down(md) {
+               padding: 28px 24px 30px;
+            }
+            p {
+                @include regular-text;
+                margin-bottom: 16px;
+            }
+        }        
+    }
 }
 
 .blog-single-autor {

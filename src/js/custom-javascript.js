@@ -195,7 +195,16 @@
           active: false,
           collapsible: true,
           header: '> div.faq-wrap >h3'
-      });        
+        });        
+
+        $(".content__accordion").accordion({
+          heightStyle: "content",
+          autoHeight: false,
+          clearStyle: true,
+          active: 0,
+          collapsible: true,
+          header: '> div.faq-wrap >h3'
+      });
 
         $('#top__mobile a').click(function(){
           $(this).toggleClass('open');

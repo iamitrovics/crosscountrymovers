@@ -203,23 +203,29 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         
                                     <?php elseif( get_row_layout() == 'accordion' ): ?>	
 
-                                        <div class="accordion-section">
-                                            <?php if( get_sub_field('accordion_title') ): ?>
-                                                <h3><?php the_sub_field('accordion_title'); ?></h3>
-                                            <?php endif; ?>
-                                            <div class="faq-accordion">
-                                            <?php if( have_rows('accordion_list') ): ?>
-                                                <?php while( have_rows('accordion_list') ): the_row(); ?>
-                                                    <span class="h4"><?php the_sub_field('heading'); ?></span>
-                                                    <div class="panel">
-                                                    <?php the_sub_field('content'); ?>
-                                                    </div>
-                                                <?php endwhile; ?>
-                                            <?php endif; ?>
-                                            </div>
-                                            <!-- // acc  -->
+                                        <div class="content__accordion">
+                                            <h2><?php the_sub_field('accordion_title'); ?></h2>
+                                            <?php
+			                                    // check if the repeater field has rows of data
+			                                    if(have_rows('accordion_list')):
+				                                    // loop through the rows of data
+				                                    while(have_rows('accordion_list')) : the_row();
+                                                        $title = get_sub_field('heading');
+					                                    $content  = get_sub_field('content');
+					                                    ?>  
+					                                    <div class="faq-wrap">
+                                                            <h3><?php echo $title; ?></h3>
+                                                            <div>
+                                                                <?php echo $content; ?>
+                                                            </div>
+                                                        </div>
+				                                    <?php endwhile;
+			                                    else :
+				                                    echo 'No data';
+			                                    endif;
+			                                    ?>
                                         </div>
-                                        <!-- // section  -->
+                                        <!-- /#content__accordion -->
 
                                     <?php elseif( get_row_layout() == 'services_module' ): ?>
 
