@@ -79,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                                 <div class="faq-wrap">
                                     <h3><?php the_sub_field('title'); ?></h3>
-                                    <div>
+                                    <div class="faq-content">
                                         <?php the_sub_field('answer'); ?>
                                     </div>
                                 </div>

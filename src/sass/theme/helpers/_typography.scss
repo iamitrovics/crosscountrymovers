@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Mark Bold';
+    src: url('../fonts/Mark-Bold.woff2') format('woff2'),
+        url('../fonts/Mark-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mark Medium';
+    src: url('../fonts/Mark-Medium.woff2') format('woff2'),
+        url('../fonts/Mark-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mark Book';
+    src: url('../fonts/Mark-Book.woff2') format('woff2'),
+        url('../fonts/Mark-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mark Regular';
+    src: url('../fonts/Mark-Regular.woff2') format('woff2'),
+        url('../fonts/Mark-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+$mark-bold: 'Mark Bold';
+$mark-reg: 'Mark Regular';
+$mark-book: 'Mark Book';
+$mark-med: 'Mark Medium';
+
+
+$font-main: 'Mark Regular';
+$font-heading:  'Mark Bold';
+
+
+
+
+
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fa, .fab, .fas, .fal, .far {
+    font-family: 'icomoon';
+}
+
+body { 
+	font: {
+		size:$base-size;
+		family: $font-main;
+	}
+	-webkit-text-size-adjust: 100%;  //fix for iOS 
+    overflow-x:hidden; 
+    color: #000;  
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+p {
+    font-family: $mark-book;
+    font-size: 0.875em;
+    line-height: 1.4;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 0;
+    a {
+        color: $red;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.h1, h1 {
+    font-size: 2.5rem;
+}
+
+.h2, h2 {
+    font-size: 2rem;
+}
+
+.h3, h3 {
+    font-size: 1.75rem;
+}
+
+.h4, h4 {
+    font-size: 1.5rem;
+}
+
+// reset
+a {
+    @include animate-fade;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a, button, input, textarea {
+    &:focus {
+        outline: none!important;
+    }
+}
+
+button, input[type="submit"] {
+    @include animate-fade;
+    cursor: pointer;
+}
+
+address {
+    margin:0px;
+    padding:0px;
+}
+iframe {
+    border:0;
+}
+
+i {
+    font-style: normal;
+}
+
+#secondary img, article img, figure, img, img.wp-post-image {
+    max-width: 100%;
+    height: auto;
+}

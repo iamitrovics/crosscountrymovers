@@ -57,7 +57,7 @@ get_header(); ?>
             </ul>
             <!-- /.nav-tabs -->
             <div class="tab-content">
-                <div class="tab-pane fade" id="home-choose" role="tabpanel" aria-labelledby="home-choose-tab">
+                <div class="tab-pane fade" id="home-choose" role="tabpanel" aria-labelledby="home-choose-tab" style="display:none;">
 
                     <?php echo do_shortcode('[gravityform id="3" title="false" description="false" ajax="true" tabindex="1"]'); ?>
 

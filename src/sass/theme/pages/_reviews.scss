@@ -1,0 +1,125 @@
+/*===============================
+=        Reviews Page          =
+===============================*/
+.video-reviews {
+    background-color: #f8f8f8;
+    padding: 85px 0;
+    @include bp(desktop) {
+       padding: 75px 0;
+    }
+    @include bp(lg) {
+        padding: 65px 0;
+    }
+    @include bp(md) {
+        padding: 55px 0;
+    }
+    @include bp(sm-down) {
+        padding: 45px 0;
+    }
+    .container {
+        @media (min-width:1200px) {
+            max-width: 1000px;
+        }
+    }
+    h3 {
+        margin-bottom: 60px;
+        font-family: $mark-med;
+        font-size: 1.250em;
+        text-align: center;
+        color: #000;
+        @include bp(sm-down) {
+            margin-bottom: 30px;
+        }
+    }
+    .video-list {
+        .video-box {
+            margin-bottom: 45px;
+            position: relative;
+            @include bp(sm-down) {
+                margin-bottom: 30px;
+            }
+            small {
+                font-size: 15px;
+                font-weight: bold;
+                display: block;
+                padding-top: 5px;
+            }
+            iframe {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+            }
+            i {
+                @include centre(both);
+                z-index: 2;
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+.text-reviews {
+    padding: 85px 0;
+    @include bp(desktop) {
+       padding: 75px 0;
+    }
+    @include bp(lg) {
+        padding: 65px 0;
+    }
+    @include bp(md) {
+        padding: 55px 0;
+    }
+    @include bp(sm-down) {
+        padding: 45px 0;
+    }
+    .container {
+        @media (min-width:1200px) {
+            max-width: 1000px;
+        }
+    }
+    h3 {
+        font-family: $mark-reg;
+        font-size: 1em;
+        margin-bottom: 40px;
+        margin-left: 1%;
+        @include bp(sm-down) {
+            margin-bottom: 30px;
+        }
+    }
+    .reviewBox {
+        min-height: 290px;
+        height: auto;
+        @include bp(sm-up) {
+            float: left;
+            width: 48%;
+            margin: 1%;
+        } 
+        @include bp(sm-down) {
+            margin-bottom: 30px;
+        }
+    }
+    .load-more {
+        margin-top: 60px;
+        text-align: center;
+        @include bp(sm-down) {
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            width: 154px;
+            height: 49px;
+            line-height: 49px;
+            font-size: 16px;
+            color: #858585;
+            border: 1px solid #858585;
+            border-radius: 5px;
+            text-align: center;
+            &:hover {
+                background-color: $red;
+                border-color: $red;
+                color: #fff;
+            }
+        }
+    }
+}

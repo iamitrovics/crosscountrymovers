@@ -1,0 +1,144 @@
+/*===============================
+=            Contact          =
+===============================*/
+
+#contact-page {
+    padding-top: 75px;
+    padding-bottom: 85px;
+    @include bp(desktop) {
+       padding-top: 65px;
+       padding-bottom: 70px;
+    }
+    @include bp(lg) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include bp(md) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @include bp(sm-down) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .container {
+        max-width: 1030px;
+    }
+    h2 {
+        margin-bottom: 30px;
+        font-family: $mark-med;
+        font-size: 2.125em;
+        line-height: 1.3;
+        @include bp(desktop) {
+            font-size: 2.1em;
+        }
+        @include bp(lg) {
+            font-size: 1.8em;
+        }
+        @include bp(md) {
+            font-size: 1.6em;
+        }
+        @include bp(sm-down) {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+    }
+    p {
+        margin-bottom: 32px;
+    }
+    .contact-content {
+        padding-right: 120px;
+        @include bp(desktop) {
+            padding-right: 80px;
+        }
+        @include bp(lg) {
+            padding-right: 30px;
+        }
+        @include bp(md) {
+            padding-right: 0;
+        }
+        @include bp(sm-down) {
+            padding-right: 0;
+        }
+        .contact-ways {
+            span {
+                display: block;
+                margin-bottom: 10px;
+                &.tel {
+                    a {
+                        &:before {
+                            content: "\e915"
+                        }
+                    }
+                }
+                &.mail {
+                    a {
+                        &:before {
+                           content: "\e91e";
+                        }
+                    }
+                }
+                a {
+                    position: relative;
+                    display: block;
+                    padding-left: 40px;
+                    color: #444;
+                    font-size: 0.875em;
+                    &:hover {
+                        color: $red;
+                    }
+                    &:before {
+                        font-family: icomoon;
+                        @include centre(y);
+                        left: 0;
+                        color: $red;
+                    } 
+                }
+            }
+        }
+    }
+    .contact-form {
+        @include bp(sm-down) {
+           margin-top: 40px;
+        }
+        .form-group {
+            margin-bottom: 23px;
+            input[type="text"], input[type="email"], textarea {
+                @include input-style;
+            }
+            textarea {
+                height: 220px;
+                padding: 20px 16px;
+            }
+        }
+        input[type="text"], input[type="email"], textarea {
+            @include input-style;
+        }
+        textarea {
+            height: 220px;
+            padding: 20px 16px;
+        }        
+        #forms {
+            float: left;
+        }
+        input[type=submit] {
+            float: right;
+            display: inline-block;
+            height: 49px;
+            line-height: 49px;
+            padding-left: 35px;
+            padding-right: 35px;
+            border: none;
+            background-color: #616161;
+            font-family: $mark-reg;
+            font-size: 1em;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            @include animate-fade;
+            &:hover {
+                background-color: $red;
+            }
+        }
+    }
+}

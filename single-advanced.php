@@ -200,7 +200,7 @@
 
                                                 <div class="faq-wrap">
                                                     <h3><?php the_sub_field('question'); ?></h3>
-                                                    <div>
+                                                    <div class="faq-content">
                                                         <?php the_sub_field('answer'); ?>
                                                     </div>
                                                 </div>

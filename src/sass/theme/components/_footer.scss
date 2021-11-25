@@ -1,0 +1,104 @@
+/*===============================
+=           Footer            =
+===============================*/
+
+#page-footer {
+	padding: 75px 0;
+    background-color: $red;
+    @include bp(lg-down) {
+    	padding: 55px 0;
+    }
+    @include bp(sm-down) {
+    	text-align: center;
+    }
+    .container {
+    	.row {
+    		align-items: center;
+    		.footer-left {
+	    		span.licence {
+	    			@include regular-text;
+	    			color: #fff;
+	    		}
+	    		.certifications {
+	    			margin-bottom: 60px;
+	    			ul {
+	    				li {
+	    					display: inline-block;
+	    					vertical-align: middle;
+							margin-right: 35px;
+							@include bp(sm-down) {
+								margin-left: 15px;
+								margin-right: 15px;
+								margin-bottom: 15px;
+							}
+	    					a {
+	    						img {
+
+	    						}
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+	    	.footer-right {
+	    		text-align: right;
+	    		@include bp(sm-down) {
+					text-align: center;
+					margin-top: 20px;
+	    		}
+	    		.footer-socials {
+	    			li {
+	    				display: inline-block;
+    					margin-right: 10px;
+						&:last-of-type {
+							margin-right: 0;
+						}
+						a {
+							div {
+								font-size: 30px;
+								@include animate-fade;
+							}
+							&:hover {
+								div {
+									opacity: .7;
+								}
+							}
+						}
+	    			}
+	    		}
+	    		.footer-nav {
+	    			margin: 20px 0;
+	    			ul {
+	    				li {
+							display: inline-block;
+    						margin-left: 20px;
+    						@include bp(sm-down) {
+    							margin-left: 10px;
+    							margin-right: 10px;
+    						}
+    						a {
+    							font-family: $mark-reg;
+    							font-size: 0.750em;
+							    line-height: 1.4;
+							    color: #fff;
+							    &:hover {
+							    	opacity: .7;
+							    }
+    						}
+	    				}
+	    			}
+	    		}
+	    		.copyright {
+	    			font-family: $mark-reg;
+					font-size: 0.750em;
+				    line-height: 1.4;
+				    color: #fff;
+	    		}
+    		}
+    	}
+    }
+}
+
+/*=======End of Footer ========*/
+
+
