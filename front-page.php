@@ -148,7 +148,6 @@ get_header(); ?>
                     <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
                         <?php setup_postdata($post); ?>
 
-                            <a href="#" target="_blank" class="read-more">
                                 <div class="reviewBox">
                                     <div class="review__top">
                                         <div class="review__left" >
@@ -182,6 +181,8 @@ get_header(); ?>
                                                     <img alt="" src="<?php bloginfo('template_directory'); ?>/img/ico/yelp-t.svg">
                                                 <?php } elseif (get_field('network_reviwer') == 'Trustpilot') { ?>
                                                     <img alt="" src="<?php bloginfo('template_directory'); ?>/img/ico/trustpilot-t.svg">
+                                                <?php } elseif (get_field('network_reviwer') == 'GMB') { ?>
+                                                    <img alt="" src="<?php bloginfo('template_directory'); ?>/img/ico/GMB.svg">
                                                 <?php } ?>   
                                             </div>
                                         </div>
@@ -195,7 +196,6 @@ get_header(); ?>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
 
                     <?php endforeach; ?>
                 <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>

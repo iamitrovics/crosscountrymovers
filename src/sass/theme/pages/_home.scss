@@ -603,7 +603,11 @@
 		    	float: right;
 		    	position: absolute;
 			    right: 32px;
-			    top: 40px;
+			    top: 36px;
+    			width: 50px;
+				img {
+					margin: 0 auto;
+				}
 		    	@include bp(sm-down) {
 		    		position: absolute;
 		        	right: 20px;
