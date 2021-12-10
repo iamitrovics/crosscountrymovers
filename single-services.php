@@ -61,6 +61,85 @@ $container = get_theme_mod( 'understrap_container_type' );
     </section>
     <!-- /.about-content -->
 
+    <div id="blog-single" class="services-flexible">
+        <div class="blog-single-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="blog__content">
+                        
+                        <?php
+                            // check if the flexible content field has rows of data
+                            if( have_rows('content_layout_services') ):
+
+                                // loop through the rows of data
+                                while ( have_rows('content_layout_services') ) : the_row();								
+
+                                    if( get_row_layout() == 'full_width_content' ): ?>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="blog__main">
+                                                <?php the_sub_field('content_block'); ?>
+                                            </div>
+                                            <!-- // main  -->
+                                        </div>
+                                        <!-- /.col-md-12 -->
+                                    </div>
+                                    <!-- /.row -->								
+
+                                    <?php elseif( get_row_layout() == 'full_width_image' ): ?>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="blog-photo">
+                                                    <?php
+                                                    $imageID = get_sub_field('featured_image');
+                                                    $image = wp_get_attachment_image_src( $imageID, 'fullwidth-image' );
+                                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                    ?> 
+
+                                                    <?php 
+                                                    $values = get_sub_field( 'image_alt_text' );
+                                                    if ( $values ) { ?>
+                                                        <img class="img-responsive" alt="<?php the_sub_field('image_alt_text'); ?>" src="<?php echo $image[0]; ?>" /> 
+                                                    <?php 
+                                                    } else { ?>
+                                                        <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                                    <?php } ?>
+
+                                                    <?php if( get_sub_field('image_caption') ): ?>
+                                                    <div class="image__caption">
+                                                        <span><?php the_sub_field('image_caption'); ?></span>
+                                                    </div>
+                                                    <?php endif; ?>
+
+                                                </div>
+                                                <!-- /.blog-photo -->
+                                            </div>
+                                            <!-- // col  -->
+                                        </div>
+
+                                    <?php endif;
+                                endwhile;
+                            else :
+                                // no layouts found
+                        endif; ?>
+
+                        </div>
+                        <!-- // conten  -->
+                    </div>
+                    <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+                
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.blog-single-text -->
+    </div>
+    <!-- /#blog-single -->
+
     <section class="services-accordion">
         <div class="container">
             <div class="row">

@@ -178,6 +178,16 @@
     @include bp(md-down) {
         padding: 20px 0px;
     }
+    &.services-flexible {
+        .container {
+            @media (min-width: 992px) {
+                max-width: 830px;
+            }
+        }
+        .blog-single-text {
+            padding: 0;
+        }
+    }
     .container  {
         max-width: 940px;
         @include bp(md) {
