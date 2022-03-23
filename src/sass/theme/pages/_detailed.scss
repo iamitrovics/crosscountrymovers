@@ -271,9 +271,11 @@
     // full content
     .city__main--full {
         padding-bottom: 60px;
-        max-width: 800px;
+        max-width: 960px;
         display: block;
         margin: 0px auto;
+    }
+    .content-holder {
         h2 {
             margin-bottom: 20px;
             font-family: $mark-bold;
@@ -317,6 +319,39 @@
                     margin-left: -1em;
                 }
             }
+        }        
+    }
+    // left image
+    .city__main--left, .city__main--right {
+        padding-bottom: 60px;
+        max-width: 960px;
+        display: block;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+        @include bp(md-down) {
+            flex-wrap: wrap;
+            padding-bottom: 30px;
+        }
+        .city__con {
+            width: 47%;
+            @include bp(md-down) {
+                width: 100%;
+                order:1;
+            }
+        }
+        .city__img {
+            width: 47%;
+            @include bp(md-down) {
+                width: 100%;
+                order:2;
+                margin-top: 20px;
+            }            
+            img {
+                width: 100%;
+                object-fit: cover;
+                min-height: 400px;
+            }
         }
     }
     // image
@@ -330,7 +365,7 @@
 
 .accordion__narrow {
     background: $white;
-    max-width: 800px;
+    max-width: 960px;
     display: block;
     margin: 0px auto;
     padding:0px;

@@ -123,13 +123,49 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <?php while( have_rows('content_layout_city') ): the_row(); ?>
                         <?php if( get_row_layout() == 'full_widh_content' ): ?>
 
-                            <div class="city__main--full">
+                            <div class="city__main--full content-holder">
                                 <?php the_sub_field('content_block'); ?>
                             </div>
                             
                         <?php elseif( get_row_layout() == 'content_left_image_right' ): ?>
 
+                            <div class="city__main--left content-holder">
+                                <div class="city__con">
+                                    <?php the_sub_field('content_block_left'); ?>
+                                </div>
+                                <!-- // content  -->
+                                <div class="city__img">
+                                    <?php
+                                    $imageID = get_sub_field('image_right_right');
+                                    $image = wp_get_attachment_image_src( $imageID, 'fullwidth-image' );
+                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                    ?> 
+
+                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                </div>
+                                <!-- // img  -->
+                            </div>
+                            <!-- // left  -->
+
                         <?php elseif( get_row_layout() == 'image_left_content_right' ): ?>
+
+                            <div class="city__main--right content-holder">
+                                <div class="city__img">
+                                <?php
+                                    $imageID = get_sub_field('image_left');
+                                    $image = wp_get_attachment_image_src( $imageID, 'fullwidth-image' );
+                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                    ?> 
+
+                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+                                </div>
+                                <!-- // img  -->
+                                <div class="city__con">
+                                    <?php the_sub_field('content_block'); ?>
+                                </div>
+                                <!-- // content  -->                                
+                            </div>
+                            <!-- // left  -->                            
 
                         <?php elseif( get_row_layout() == 'faq' ): ?>
                             
