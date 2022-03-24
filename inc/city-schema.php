@@ -11,7 +11,7 @@
     <?php 
     $values = get_field( 'phone_number_city_single' );
     if ( $values ) { ?>
-        "telephone": "<?php the_field('phone_number_city_sidebar'); ?>",
+        "telephone": "<?php the_field('phone_number_city_single'); ?>",
     <?php 
     } else { ?>
         "telephone": "<?php the_field('phone_number_top_general', 'options'); ?>",
@@ -56,7 +56,7 @@
         <?php 
         $values = get_field( 'phone_number_city_single' );
         if ( $values ) { ?>
-            "telephone": "<?php the_field('phone_number_city_sidebar'); ?>",
+            "telephone": "<?php the_field('phone_number_city_single'); ?>",
         <?php 
         } else { ?>
             "telephone": "<?php the_field('phone_number_top_general', 'options'); ?>",
