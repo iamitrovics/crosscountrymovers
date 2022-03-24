@@ -220,7 +220,178 @@ $container = get_theme_mod( 'understrap_container_type' );
     </section>
     <!-- /#features -->
 
+    <section class="testimonials">
+        <div class="container">  
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro">
+                        <h2>What Our Customers Say About Us</h2>
+                        <p>We rely on genuine reviews of our clients to continue improving and providing the best possible moving services.</p>
+                    </div>
+                    <!-- /.intro -->
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+        <div class="review-slider" id="review-slider">
+
+            <?php
+                $post_objects = get_field('reviews_list_service_single');
+
+                if( $post_objects ): ?>
+                    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                        <?php setup_postdata($post); ?>
+
+                                <div class="reviewBox">
+                                    <div class="review__top">
+                                        <div class="review__left" >
+                                            <span class="author"><?php the_title(); ?></span>
+                                            <span class="location"><?php the_field('place_reviwer'); ?></span>
+                                        </div>
+                                        <div class="review__right">
+                                            <div class="stars">
+                                            <?php if (get_field('score_reviwer') == '4') { ?>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                            <?php } elseif (get_field('score_reviwer') == '4.5') { ?>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                            <?php } elseif (get_field('score_reviwer') == '5') { ?>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                                <li><i class="icon-star"></i></li>
+                                            <?php } ?>   
+                                            </div>
+                                            <div class="source">
+                                                <!-- yelp here -->
+                                                <?php if (get_field('network_reviwer') == 'Yelp') { ?>
+                                                    <img alt="" src="<?php bloginfo('template_directory'); ?>/img/ico/yelp-t.svg">
+                                                <?php } elseif (get_field('network_reviwer') == 'Trustpilot') { ?>
+                                                    <img alt="" src="<?php bloginfo('template_directory'); ?>/img/ico/trustpilot-t.svg">
+                                                <?php } elseif (get_field('network_reviwer') == 'GMB') { ?>
+                                                    <img alt="" src="<?php bloginfo('template_directory'); ?>/img/ico/GMB.svg">
+                                                <?php } ?>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review__main">
+                                        <div class="title">
+                                            <h4><?php the_title(); ?></h4>
+                                        </div>
+                                        <div class="content">
+                                            <?php the_field('review_content_box'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    <?php endforeach; ?>
+                <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+            <?php endif; ?>
+
+        </div>
+        <!-- /.review-slider -->
+    </section>    
+
     <?php include(TEMPLATEPATH . '/inc/bottomcta-inc.php'); ?>
+
+    <?php
+    $imageID = get_field('featured_image_serv_singler');
+    $image = wp_get_attachment_image_src( $imageID, 'galthumb-image' );
+    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+    ?> 
+
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org/", 
+    "@type": "Product", 
+    "name": "<?php the_title(); ?>",
+    "image": "<?php echo $image[0]; ?>",
+    "description": "<?php the_field('short_services_text', false, false); ?>",
+    "brand": {
+        "@type": "Brand",
+        "name": "Cross Country Movers"
+    },
+
+
+    <?php $post_objects = get_field('reviews_list_service_single'); ?>
+        <?php $count = count(get_field('reviews_list_service_single')); ?>
+        <?php $rowCount = $count; //GET THE COUNT ?>    
+
+ 
+
+       "review": [
+        
+            <?php $i = 1; ?>
+
+
+                <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                    <?php setup_postdata($post); ?>
+
+
+                {
+                    "@type": "Review",
+                    "name": "<?php the_field('review_title_reviwer'); ?>",
+                    "reviewBody": "<?php the_field('review_content_box', false, false); ?>",
+                    "reviewRating": {
+                    "@type": "Rating",
+
+                    <?php if (get_field('score_reviwer') == '5') { ?>
+                        "ratingValue": "5",
+                    <?php } elseif (get_field('score_reviwer') == '4.5') { ?>
+                        "ratingValue": "4",
+                    <?php } elseif (get_field('score_reviwer') == '4') { ?>
+                        "ratingValue": "4",
+                    <?php } ?>  
+
+                    "bestRating": "5",
+                    "worstRating": "1"
+                    },
+                    "datePublished": "<?php echo get_the_date( 'F j, Y' ); ?>",
+                    "author": {"@type": "Person", "name": "<?php the_title(''); ?>"},
+                    "publisher": {"@type": "Organization", "name": "Cross Country Movers"}
+                }
+
+
+                <?php if($i < $rowCount): ?>
+                    ,
+                <?php endif; ?>
+
+                <?php
+                $rating = get_field('score_reviwer');
+                $ratingsArray[$i++] += get_field('score_reviwer');
+                ?>                       
+
+                <?php endforeach; ?>
+            <?php wp_reset_postdata(); ?>
+        
+        ] ,
+
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            <?php
+                $totalRatings =  array_sum($ratingsArray);      
+                $totalCountReview = $totalRatings  / $rowCount ;
+            ?>
+            "ratingValue": "<?php echo round($totalCountReview , 1); ?>",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "<?php echo $rowCount; ?>",
+            "reviewCount": "<?php echo $rowCount; ?>"
+        }
+
+
+    }
+    </script>    
 
 <?php
 get_footer();

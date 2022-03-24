@@ -28,9 +28,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 
-<?php if( get_field('body_code_snippet', 'options') ): ?>
-	<?php the_field('body_code_snippet', 'options'); ?>
-<?php endif; ?>
+	<?php if( get_field('body_code_snippet', 'options') ): ?>
+		<?php the_field('body_code_snippet', 'options'); ?>
+	<?php endif; ?>
+
+	<?php if ( is_singular( 'cities' ) ) { ?>
+        <?php include(TEMPLATEPATH . '/inc/city-schema.php'); ?>
+    <?php } elseif (is_page_template('page-templates/reviews-template.php')) { ?>
+        <?php include(TEMPLATEPATH . '/inc/reviews-schema.php'); ?>
+	<?php } else { ?>
+        <?php if( get_field('general_rich_snippet', 'options') ): ?>
+            <?php the_field('general_rich_snippet', 'options'); ?>
+        <?php endif; ?>    
+	<?php } ?>	
 
 <div class="wraper">
 	<div class="menu-overlay"></div>
