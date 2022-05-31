@@ -303,10 +303,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <?php include(TEMPLATEPATH . '/inc/bottomcta-inc.php'); ?>
 
+
+
     <?php
-    $imageID = get_field('featured_image_serv_singler');
-    $image = wp_get_attachment_image_src( $imageID, 'galthumb-image' );
-    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+    $imageID = get_field('featured_image_serv_singler_feat');
+    $image2 = wp_get_attachment_image_src( $imageID, 'service-image' );
     ?> 
 
 
@@ -315,7 +316,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     "@context": "https://schema.org/", 
     "@type": "Product", 
     "name": "<?php the_title(); ?>",
-    "image": "<?php echo $image[0]; ?>",
+    "image": "<?php echo $image2[0]; ?>",
     "description": "<?php the_field('short_services_text', false, false); ?>",
     "brand": {
         "@type": "Brand",

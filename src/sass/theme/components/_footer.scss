@@ -26,6 +26,9 @@
 	    					display: inline-block;
 	    					vertical-align: middle;
 							margin-right: 35px;
+							@include bp(lg) {
+								margin-right: 25px;
+							}
 							@include bp(sm-down) {
 								margin-left: 15px;
 								margin-right: 15px;

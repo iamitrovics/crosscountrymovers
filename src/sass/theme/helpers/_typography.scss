@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Mark Bold';
-    src: url('../fonts/Mark-Bold.woff2') format('woff2'),
-        url('../fonts/Mark-Bold.woff') format('woff');
+    src: url('../fonts/Mark-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
     font-family: 'Mark Medium';
-    src: url('../fonts/Mark-Medium.woff2') format('woff2'),
-        url('../fonts/Mark-Medium.woff') format('woff');
+    src: url('../fonts/Mark-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -18,8 +16,7 @@
 
 @font-face {
     font-family: 'Mark Book';
-    src: url('../fonts/Mark-Book.woff2') format('woff2'),
-        url('../fonts/Mark-Book.woff') format('woff');
+    src: url('../fonts/Mark-Book.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -27,8 +24,7 @@
 
 @font-face {
     font-family: 'Mark Regular';
-    src: url('../fonts/Mark-Regular.woff2') format('woff2'),
-        url('../fonts/Mark-Regular.woff') format('woff');
+    src: url('../fonts/Mark-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -43,9 +39,6 @@ $mark-med: 'Mark Medium';
 
 $font-main: 'Mark Regular';
 $font-heading:  'Mark Bold';
-
-
-
 
 
 

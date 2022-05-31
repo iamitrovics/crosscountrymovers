@@ -1,0 +1,327 @@
+// Hero
+#lp-hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: url('../img/bg/shaper.png') no-repeat;
+    background-position: left top;
+    background-size: contain;
+    background-color: $red;
+    @include bp(lg) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @include bp(md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include bp(sm-down) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        @include bp(sm-down) {
+            display: block;
+        }
+        .hero-text {
+            width: 45%;
+            @include bp(lg) {
+                width: 50%;
+            }
+            @include bp(sm-down) {
+                width: 100%;
+            }
+            @include bp(md) {
+                width: 50%;
+            }
+            h1 {
+                color:$white;
+                font-size: 66px;
+                font-family: $mark-bold;
+                line-height: 1;
+                margin-bottom: 35px;
+                @include bp(desktop) {
+                    font-size: 56px;
+                }
+                @include bp(lg) {
+                    font-size: 56px;
+                    margin-bottom: 25px;
+                }
+                @include bp(md) {
+                    font-size: 52px;
+                    margin-bottom: 20px;
+                }
+                @include bp(sm-down) {
+                    font-size: 44px;
+                    margin-bottom: 25px;
+                }
+                br {
+                    @include bp(md) {
+                        display: none;
+                    }
+                    @include bp(sm-down) {
+                        display: none;
+                    }
+                }
+            }
+            h2 {
+                color:$white;
+                font-size: 28px;
+                @include bp(desktop) {
+                    font-size: 26px;
+                }
+                @include bp(lg) {
+                    font-size: 24px;
+                }
+                @include bp(md) {
+                    font-size: 24px;
+                }
+                @include bp(sm-down) {
+                    font-size: 24px;
+                }
+            }
+            ul {
+                margin-top: 45px;
+                @include bp(lg) {
+                    margin-top: 30px;
+                }
+                @include bp(md) {
+                    margin-top: 30px;
+                }
+                li {
+                    font-size: 20px;
+                    color:$white;
+                    display: block;
+                    margin-bottom: 15px;
+                    font-family: $mark-med;
+                    padding-left: 50px;
+                    position: relative;
+                    @include bp(lg) {
+                        font-size: 18px;
+                    }
+                    @include bp(md) {
+                        margin-bottom: 12px;
+                        font-size: 18px;
+                    }
+                    @include bp(sm-down) {
+                        margin-bottom: 13px;
+                        font-size: 18px;
+                    }
+                    &:before {
+                        font-family: icomoon;
+                        content: "\e94e";
+                        position: absolute;
+                        left:0px;
+                        top:5px;
+                        font-size: 18px;
+                        z-index:5;
+                        @include bp(md) {
+                            font-size: 16px;
+                        }
+                        @include bp(sm-down) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            // awards
+            .awards {
+                display: flex;
+                align-items: center;
+                padding-top: 30px;
+                @include bp(sm-down) {
+                    justify-content: center;
+                }
+                .award {
+                    width: 100px;
+                    height: 100px;
+                    position: relative;
+                    background-color: $white;
+                    border-radius: 100%;
+                    margin-right: 25px;
+                    @include animate-fade;
+                    @include bp(md) {
+                        margin-right: 15px;
+                        width: 80px;
+                        height: 80px;                        
+                    }
+                    @include bp(sm-down) {
+                        margin-right: 15px;
+                        width: 80px;
+                        height: 80px;
+                    }
+                    &:hover {
+                        transform: scale(1.1)
+                    }
+                    a {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            @include centre(both);
+                            max-width: 80%;
+                            max-height: 60%;
+                        }
+                    }
+                }
+            }
+        }
+        .hero-form {
+            width: 45%;
+            background-color: $white;
+            padding:45px;
+            border-radius: 9px;
+            box-shadow: 30px 30px 60px rgba(0,0,0,.06);
+            padding-top: 35px;
+            padding-bottom: 35px;
+            @include bp(md) {
+                padding:20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            @include bp(sm-down) {
+                margin-top: 30px;
+                padding:35px;
+                width: 100%;
+            }
+            span.title {
+                display: block;
+                text-align: center;
+                font-size: 22px;
+                text-transform: uppercase;
+                font-family: $mark-bold;
+            }
+            input[type="submit"] {
+                width: 100%;
+                border:none;
+                height: 60px;
+                line-height: 60px;
+                border-radius: 6px;
+                font-size: 18px;
+                font-family: $mark-bold;
+                color:$white;
+                background-color: #3dd6f5;
+                @include bp(md) {
+                    height: 52px;
+                    line-height: 52px;
+                }
+                &:hover {
+                    background-color: $red;
+                    color:$white;
+                }
+            }
+            .gform_wrapper div.validation_error {
+                display: none;
+            }
+            .gform_wrapper .field_description_below .gfield_description {
+                font-size: 13px;
+                padding-top: 5px;
+            }
+            .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+// Services
+#services {
+    &.lp-services {
+        background-color: #ededed;
+        .intro {
+            p {
+                max-width: 700px;
+                margin:0px auto;
+            }
+        }
+        .services-list {
+        }
+        .service-box {
+            width: 100%;
+            background-color: $white;
+            display: block;
+            flex: auto;
+            max-width: initial;
+            margin-bottom: 30px;
+            .service-text {
+                margin-bottom: 0px;
+            }            
+        }
+    }
+}
+
+// features
+#features {
+    &.features-lp {
+        .features-in {
+            .three-box {
+                float:left;
+                p {
+                    margin-bottom: 25px;
+                }
+            }
+            .img-wrapper {
+                right:0px;
+            }
+        }
+    }
+}
+
+// cta
+#bottom-cta--lp {
+    padding-top: 120px;
+    text-align: center;
+    padding-bottom: 120px;
+    background-image: url(../img/bg/cc-movers-stripes-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+    background-color: #f2f2f2;    
+    @include bp(lg) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @include bp(sm-down) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .cta-content {
+        max-width: 800px;
+        margin:0px auto;
+        h3 {
+            @include heading-text;
+        }
+        p {
+            @include subheading-text;
+        }
+        a.btn-cta {
+            font-family: $mark-reg;
+            padding-left: 42px;
+            padding-right: 42px;
+            margin-right: 20px;
+            background-color: $red;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #fff;
+            text-align: center;
+            margin-right: 20px;
+            height: 52px;
+            line-height: 52px;
+            margin-top: 30px;
+            display: inline-block;
+            font-size: 20px;
+            &:hover {
+                background-color:#3dd6f5;
+            }
+        }
+    }
+}
+
+#nav-cta--lp {
+    @include bp(sm-down) {
+        margin-right: 0px!important;
+    }
+}

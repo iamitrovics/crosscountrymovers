@@ -97,11 +97,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     </div>
     <!-- /.wraper -->
-    <script src="<?php bloginfo('template_directory'); ?>/js/map.js"></script>   
 
 
     <?php 
     $values = get_field( 'phone_number_city_single' );
+    $values2 = get_field( 'phone_number_lp_cta' );
     if ( $values ) { ?>
 
         <div id="fixed-cta">
@@ -118,6 +118,20 @@ $container = get_theme_mod( 'understrap_container_type' );
         </div>
         <!-- // fixed cta  -->
 
+    <?php } elseif ( $values2 ) { ?>
+        <div id="fixed-cta">
+            
+            <a href="tel:<?php the_field('phone_number_lp_cta') ?>">
+                <em><i class="fal fa-phone-alt"></i></em>
+                <div class="phone-text">
+                    <small class="label">Get a Free Estimate</small>
+                    <span><?php the_field('phone_number_lp_cta') ?></span>
+                </div>
+                <!-- // text  -->
+            </a>
+
+        </div>
+        <!-- // fixed cta  -->
     <?php 
     } else { ?>
 
@@ -142,6 +156,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php if( get_field('footer_code_snippet', 'options') ): ?>
     <?php the_field('footer_code_snippet', 'options'); ?>
 <?php endif; ?>
+
+<!-- <script src="<?php bloginfo('template_directory'); ?>/js/map.js"></script>    -->
+
 
 </body>
 
