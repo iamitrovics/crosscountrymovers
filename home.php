@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="intro">
-                        <h2><?php the_field('main_title_blog_list' , get_option('page_for_posts')); ?></h2>        
+                        <h1><?php the_field('main_title_blog_list' , get_option('page_for_posts')); ?></h1>        
                         <?php the_field('text_intro_blog_list' , get_option('page_for_posts')); ?>
                     </div>
                     <!-- /.intro -->
