@@ -35,6 +35,7 @@ get_header(); ?>
     <!-- /.container -->
     <div id="moving-forms">
         <div class="container">
+
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link scroll" id="home-choose-tab" data-toggle="tab" href="#home-choose" role="tab" aria-controls="home-choose" aria-selected="true">
@@ -56,16 +57,21 @@ get_header(); ?>
                 </li> 
             </ul>
             <!-- /.nav-tabs -->
+
             <div class="tab-content">
                 <div class="tab-pane fade" id="home-choose" role="tabpanel" aria-labelledby="home-choose-tab" style="display:none;">
 
-                    <?php echo do_shortcode('[gravityform id="3" title="false" description="false" ajax="true" tabindex="1"]'); ?>
+                    <div class="form-wrapper">
+                        <?php echo do_shortcode('[contact-form-7 id="2454" title="Blog Form Home Moving"]'); ?>
+                    </div>
 
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane fade" id="car-choose" role="tabpanel" aria-labelledby="car-choose-tab">
 
-                    <?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true" tabindex="1"]'); ?> 
+                    <div class="form-wrapper">
+                        <?php echo do_shortcode('[contact-form-7 id="2455" title="Blog Form Car Moving"]'); ?>
+                    </div>
 
                 </div>
                 <!-- /.tab-pane -->

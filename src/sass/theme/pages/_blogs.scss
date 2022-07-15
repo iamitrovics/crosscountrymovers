@@ -583,7 +583,7 @@
 #bottom-form {
     margin-top: -50px;
     margin-bottom: 40px;
-    #gform_wrapper_7 {
+    .form-wrapper {
         padding: 41px 56px 34px;
         background: #ededed;
         box-shadow: 15px 15px 20px rgba(0, 0, 0, .16);
@@ -591,7 +591,80 @@
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
         padding-bottom: 70px;
+        .nav-tabs {
+            border:0;
+            display: flex;
+            justify-content: center;
+            li {
+                text-align: center;
+                border:0;
+                margin: 0;
+                @include bp(lg-down) {
+                    width: 50%;
+                }
+                &:first-of-type {
+                    a {
+                        border-top-left-radius: 5px;
+                    }
+                }
+                &:last-of-type {
+                    margin-left: -1px;
+                    a {
+                        border-top-right-radius: 5px;
+                    }
+                }
+                a {
+                    display: block;
+                    position: relative;
+                    width: 160px;
+                    height: 41px;
+                    line-height: 41px;
+                    background-color: #d9d9d9;
+                    font-family: $mark-bold;
+                    font-size: 1em;
+                    cursor: pointer;
+                    color: #000;
+                    border:0;
+                    border-radius:0;
+                    padding:0;
+                    &.active {
+                        background-color: $red;
+                        color:$white;
+                    }
+                    @include bp(lg-down) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
+    h5 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 38px;
+        @include bp(sm-down) {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+    }
+    input[type="text"], input[type="email"], textarea, input[type="tel"] {
+        @include input-style;
+        padding-left: 16px !important;
+        font-size: 14px;
+        background:$white;
+    }    
+    select {
+        @include input-style;
+        padding-left: 16px !important;
+        font-size: 14px;
+    }
+    label {
+        font-size: 14px!important;
+        margin-bottom: 8px;
+        color: #444;    
+        font-weight: 400!important;
+        display: block;
+    }    
     input {
         background:$white;
     }
@@ -599,8 +672,15 @@
         background:$white;
     }
     h5 {
-        margin-bottom: 10px;
         margin-top: 30px;
+        text-align: center;
+    }
+    .footer {
+        padding-top: 20px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     input[type="submit"] {
 		font-size: 16px;
@@ -620,6 +700,20 @@
 		&:hover {
 			background-color: #ee3f23;
 		}        
+    }
+    .wpcf7-spinner {
+        display: none;
+    }
+    .wpcf7-not-valid-tip {
+        font-size: 13px;
+        padding-top: 5px;
+    }
+    .wpcf7 form .wpcf7-response-output {
+        text-align: center;
+        padding-top: 15px;
+    }
+    .form-block {
+        margin-bottom: 24px;
     }
 }
 

@@ -101,8 +101,12 @@
         @include bp(sm-down) {
            margin-top: 40px;
         }
-        .form-group {
+        .form-group, .form-block {
             margin-bottom: 23px;
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
             input[type="text"], input[type="email"], textarea {
                 @include input-style;
             }
@@ -118,6 +122,16 @@
             height: 220px;
             padding: 20px 16px;
         }        
+        .wpcf7-not-valid {
+            background-color: pink!important;
+        }
+        .wpcf7-not-valid-tip {
+            padding-top: 5px;
+        }
+        .wpcf7 form .wpcf7-response-output {
+            text-align: right;
+            margin-top: 30px;
+        }
         #forms {
             float: left;
         }

@@ -212,8 +212,18 @@ section .intro, .inner-header .intro {
         max-width: 500px;
         margin:0px auto;
     }
-    .form-group {
+    .form-group, .form-block {
         margin-bottom: 23px;
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .wpcf7-not-valid {
+            background-color: pink!important;
+        }
+        .wpcf7-not-valid-tip {
+            padding-top: 5px;
+        }      
         input[type="text"], input[type="email"], textarea {
             @include input-style;
         }
@@ -233,6 +243,10 @@ section .intro, .inner-header .intro {
     #forms {
         float: left;
     }
+    .wpcf7 form .wpcf7-response-output {
+        text-align: right;
+        margin-top: 30px;
+    }      
     input[type=submit], button {
         float: right;
         display: inline-block;
@@ -850,4 +864,196 @@ td.ui-datepicker-other-month  {
             display: none;
         }
     } 
+}
+
+#booking-div-wrap {
+
+    [data-cf7mls-order="0"] {
+        .cf7mls-btns {
+            max-width: 171px;
+            @include bp(md) {
+                max-width: 100%;
+                padding-top: 15px;
+            }
+            @include bp(sm-down) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    [data-cf7mls-order="1"] {
+        .cf7mls-btns {
+            max-width: 271px;
+            @include bp(md) {
+                max-width: 100%;
+                padding-top: 15px;
+            }
+            @include bp(sm-down) {
+                max-width: 100%;
+            }
+            .cf7mls_back {
+                float: right;
+                margin-left: 10px!important;
+                @include bp(md-down) {
+                    margin-bottom: 10px!important;
+                }
+            }
+        }
+    }    
+
+    .fieldset-cf7mls {
+        display: flex;
+        align-items: center;
+        @include bp(md) {
+            flex-wrap: wrap;
+            display: block;
+        }
+        @include bp(sm-down) {
+            display: block;
+        }
+        .cf7mls-btns {
+            // width: 171px;
+
+            // max-width: auto;
+            flex:1;
+             .cf7mls_next, .cf7mls_back {
+                margin:0px;
+                background-color: #3dd6f5;
+                padding-top: 26px;
+                padding-bottom: 26px;
+                border-radius: 12px;
+                font-size: 16px;
+                padding-left: 40px;
+                padding-right: 40px;
+                color:$white;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                height: 70px;
+                line-height: 70px;                
+                @include bp(sm-down) {
+                    width: 100%;
+                    text-align: center;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    height: 60px;
+                    line-height: 60px;
+                }                
+                &:hover {
+                    background-color: $green;
+                }
+             }           
+        }  
+
+        .cf7mls_back {
+            margin:0px;
+            background-color: #3dd6f5;
+            padding-top: 26px;
+            padding-bottom: 26px;
+            border-radius: 12px;
+            font-size: 16px;
+            padding-left: 40px;
+            padding-right: 40px;
+            color:$white;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            height: 70px;
+            line-height: 70px;                 
+            @include bp(sm-down) {
+                width: 100%;
+                text-align: center;
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                height: 60px;
+                line-height: 60px;
+            }
+            &:hover {
+                background-color: $green;
+            }
+        }
+        
+        input[type="submit"] {
+            margin:0px;
+            background: $red;
+            padding-top: 26px;
+            padding-bottom: 26px;
+            border-radius: 12px;
+            font-size: 16px;
+            padding-left: 40px;
+            padding-right: 40px;
+            color:$white;
+            border:none;
+            margin-right: 10px;
+            @include bp(sm-down) {
+                margin-right: 0px;
+                width: 100%;
+                padding-left: 0px;
+                padding-right: 0px;
+                text-align: center;
+                margin-bottom: 10px;
+                padding-top: 22px;
+                padding-bottom: 22px;
+            }
+            &:hover {
+                background-color: $green;
+            } 
+        }
+
+        .wpcf7-spinner {
+            display: none;
+        }
+
+        .form-block {
+            position: relative;
+            width: 100%;
+            @include bp(sm-down) {
+                margin-bottom: 15px;
+            }
+            input[type="text"], input[type="tel"], input[type="email"], select {
+                width: 100%;
+                @include input-style;
+                padding-left: 16px !important;
+                font-size: 14px;
+                background: $white;                
+            }
+            label {
+                font-size: 14px!important;
+                margin-bottom: 8px;
+                color: #444;    
+                font-weight: 400!important;
+                display: block;                
+            }
+        }
+        .wpcf7-not-valid-tip {
+            padding-top: 4px;
+        }
+        .wpcf7-not-valid {
+            background: pink!important;
+        }
+        .row {
+            flex:1;
+            @include bp(sm-down) {
+                display: block;
+            }
+            .col {
+                @include bp(sm-down) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.wpcf7 form .wpcf7-response-output {
+    margin:0px;
+    padding:0px;
+    border:none!important;
+    font-size: 14px;
+    color:$red;
+    font-weight: bold;
+    padding:10px;
+    padding-bottom: 0px;
 }

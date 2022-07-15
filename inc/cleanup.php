@@ -104,3 +104,8 @@ function remove_content_editor()
 { 
     remove_post_type_support('page', 'editor');        
 }
+
+add_action( 'admin_init', 'disable_autosave' );
+function disable_autosave() {
+wp_deregister_script( 'autosave' );
+}

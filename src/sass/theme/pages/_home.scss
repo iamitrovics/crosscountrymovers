@@ -18,6 +18,9 @@
         	padding:0;
         }
     }
+	@include bp(md-down) {
+		padding:15px;
+	}
 	.nav-tabs {
 		border:0;
 		li {
@@ -68,6 +71,9 @@
 	    border-bottom-left-radius: 5px;
 	    border-bottom-right-radius: 5px;
 	    border-top-right-radius: 5px;
+		@include bp(md) {
+			padding:20px;
+		}
 	    @include bp(sm-down) {
 	    	padding: 20px;
 	    }
@@ -640,147 +646,147 @@
     }
 }
 
-#booking-div-wrap {
-	input[type="text"], input[type="email"], input[type="phone"], select {
-		background: $white;
-		border:1px solid transparent;
-	}
-	.gform_wrapper {
-		margin-top: 0px;
-		margin-bottom: 0px;
-	}
-	.gfield {
-		margin-bottom: 0px;
-		margin-top: 0px;
-	}
-	#gform_page_5_1 {
-		display: flex;
-		.gform_page_fields {
-			width: 100%;
-		}
-		.gform_page_footer {
-			flex:1;
-		}
-	}
-	#gform_page_5_2, #gform_page_5_3 {
-		display: flex;
-		.gform_page_fields {
-			width: 100%;
-		}
-		.gform_page_footer {
-			width:350px;
-			.gform_next_button {
-				width: 120px !important;
-			}
-			.gform_previous_button {
-				width: 100px !important;
-				background: #d9d9d9;
-			}
-		}		
-	}
-	.gform_next_button {
-		font-size: 16px;
-		float: left;
-		background-color: #3dd6f5;
-		border: none;
-		color: #fff;
-		height: 49px;
-		text-transform: uppercase;
-		border-radius: 5px;
-		font-family: "Mark Medium";
-		box-shadow: none;
-		cursor: pointer;
-		outline: none;
-		transition: 0.25s ease-in-out;
-		width: 230px !important;		
-		&:hover {
-			background-color: #ee3f23;
-		}
-	}
-	.validation_message {
-		padding-top: 5px !important;
-		font-size: 12px !important;
-	}
-	li.gfield.gfield_error.gfield_contains_required {
-		margin-top: 0px !important;
-	}
-	.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
-		margin-top: 5px !important;
-	}
-	div.validation_error {
-		padding-top: 5px;
-		padding-bottom: 5px;
-		margin-bottom: 10px;
-		font-size: 14px;
-	}
-	.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
-		padding-top: 2px !important;
-	}
-	#gform_page_5_3 {
-		.gform_page_footer {
-			width: 400px;
-		}
-	}
-	#gform_page_6_1 {
-		display: flex;
-		.gform_page_fields {
-			width: 100%;
-		}
-		.gform_page_footer {
-			width:350px;
-			.gform_previous_button {
-				width: 120px !important;
-				background: #d9d9d9;
-			}
-		}
-	}
-	#gform_page_6_2  {
-		display: flex;
-		.gform_page_fields {
-			width: 100%;
-		}
-		.gform_page_footer {
-			width:350px;
-			padding:0px;
-			.gform_next_button {
-				width: 120px !important;
-			}
-			.gform_previous_button {
-				width: 100px !important;
-				background: #d9d9d9;
-			}
-		}		
-	}
-	#gform_page_6_3 , #gform_page_6_4, #gform_page_6_5 {
-		display: flex;
-		.gform_page_fields {
-			width: 100%;
-		}
-		.gform_page_footer {
-			width:400px;
-			.gform_next_button {
-				width: 120px !important;
-			}
-			.gform_previous_button {
-				width: 100px !important;
-				background: #d9d9d9;
-			}
-		}		
-	}
-	input[type=submit] {
-		background-color: #3dd6f5!important;
-	}
-	.gform_page {
-		@include bp(md-down) {
-			flex-wrap: wrap;
-		}
-		.gform_next_button {
-			@include bp(md-down) {
-				margin-right: 15px;
-			}
-		}
-	}
-}
+// #booking-div-wrap {
+// 	input[type="text"], input[type="email"], input[type="phone"], select {
+// 		background: $white;
+// 		border:1px solid transparent;
+// 	}
+// 	.gform_wrapper {
+// 		margin-top: 0px;
+// 		margin-bottom: 0px;
+// 	}
+// 	.gfield {
+// 		margin-bottom: 0px;
+// 		margin-top: 0px;
+// 	}
+// 	#gform_page_5_1 {
+// 		display: flex;
+// 		.gform_page_fields {
+// 			width: 100%;
+// 		}
+// 		.gform_page_footer {
+// 			flex:1;
+// 		}
+// 	}
+// 	#gform_page_5_2, #gform_page_5_3 {
+// 		display: flex;
+// 		.gform_page_fields {
+// 			width: 100%;
+// 		}
+// 		.gform_page_footer {
+// 			width:350px;
+// 			.gform_next_button {
+// 				width: 120px !important;
+// 			}
+// 			.gform_previous_button {
+// 				width: 100px !important;
+// 				background: #d9d9d9;
+// 			}
+// 		}		
+// 	}
+// 	.gform_next_button {
+// 		font-size: 16px;
+// 		float: left;
+// 		background-color: #3dd6f5;
+// 		border: none;
+// 		color: #fff;
+// 		height: 49px;
+// 		text-transform: uppercase;
+// 		border-radius: 5px;
+// 		font-family: "Mark Medium";
+// 		box-shadow: none;
+// 		cursor: pointer;
+// 		outline: none;
+// 		transition: 0.25s ease-in-out;
+// 		width: 230px !important;		
+// 		&:hover {
+// 			background-color: #ee3f23;
+// 		}
+// 	}
+// 	.validation_message {
+// 		padding-top: 5px !important;
+// 		font-size: 12px !important;
+// 	}
+// 	li.gfield.gfield_error.gfield_contains_required {
+// 		margin-top: 0px !important;
+// 	}
+// 	.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+// 		margin-top: 5px !important;
+// 	}
+// 	div.validation_error {
+// 		padding-top: 5px;
+// 		padding-bottom: 5px;
+// 		margin-bottom: 10px;
+// 		font-size: 14px;
+// 	}
+// 	.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+// 		padding-top: 2px !important;
+// 	}
+// 	#gform_page_5_3 {
+// 		.gform_page_footer {
+// 			width: 400px;
+// 		}
+// 	}
+// 	#gform_page_6_1 {
+// 		display: flex;
+// 		.gform_page_fields {
+// 			width: 100%;
+// 		}
+// 		.gform_page_footer {
+// 			width:350px;
+// 			.gform_previous_button {
+// 				width: 120px !important;
+// 				background: #d9d9d9;
+// 			}
+// 		}
+// 	}
+// 	#gform_page_6_2  {
+// 		display: flex;
+// 		.gform_page_fields {
+// 			width: 100%;
+// 		}
+// 		.gform_page_footer {
+// 			width:350px;
+// 			padding:0px;
+// 			.gform_next_button {
+// 				width: 120px !important;
+// 			}
+// 			.gform_previous_button {
+// 				width: 100px !important;
+// 				background: #d9d9d9;
+// 			}
+// 		}		
+// 	}
+// 	#gform_page_6_3 , #gform_page_6_4, #gform_page_6_5 {
+// 		display: flex;
+// 		.gform_page_fields {
+// 			width: 100%;
+// 		}
+// 		.gform_page_footer {
+// 			width:400px;
+// 			.gform_next_button {
+// 				width: 120px !important;
+// 			}
+// 			.gform_previous_button {
+// 				width: 100px !important;
+// 				background: #d9d9d9;
+// 			}
+// 		}		
+// 	}
+// 	input[type=submit] {
+// 		background-color: #3dd6f5!important;
+// 	}
+// 	.gform_page {
+// 		@include bp(md-down) {
+// 			flex-wrap: wrap;
+// 		}
+// 		.gform_next_button {
+// 			@include bp(md-down) {
+// 				margin-right: 15px;
+// 			}
+// 		}
+// 	}
+// }
 
 
 

@@ -346,9 +346,38 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
+                    
+                    <div class="form-wrapper booking-div">
 
-                    <?php echo do_shortcode('[gravityform id="7" title="false" description="false" ajax="true"]'); ?>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="auto-tab" data-toggle="tab" href="#auto" role="tab" aria-controls="auto" aria-selected="false">Auto</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-tabs -->
 
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <?php echo do_shortcode('[contact-form-7 id="2454" title="Blog Form Home Moving"]'); ?>
+                            </div>
+                            <!-- /.tab-pane -->
+
+                            <div class="tab-pane fade" id="auto" role="tabpanel" aria-labelledby="auto-tab">
+
+                            <?php echo do_shortcode('[contact-form-7 id="2455" title="Blog Form Car Moving"]'); ?>
+                                                            
+         
+                            </div>
+                            <!-- /.tab-pane -->
+                            
+                        </div>
+                        <!-- /.tab-content -->            
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -134,7 +134,7 @@
             var date5 = new Date('07/05/2022');
             var date6 = new Date('07/20/2022');
 
-            $(".date-picker-input input").datepicker({
+            $(".date-picker-input").datepicker({
                 minDate: '0',
                 showOtherMonths: true,
                 selectOtherMonths: true,

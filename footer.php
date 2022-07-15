@@ -159,6 +159,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <!-- <script src="<?php bloginfo('template_directory'); ?>/js/map.js"></script>    -->
 
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+  location = 'https://crosscountrymovers.com/thank-you/';
+}, false );
+</script>	
 
 </body>
 
