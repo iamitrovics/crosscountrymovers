@@ -159,3 +159,11 @@ if (current_user_can('manage_options')) {
 	}
 	add_action( 'user_profile_update_errors', 'lwp_2629_profile_update', 10, 3 );
 	}
+
+	//Remove Gutenberg Block Library CSS from loading on the frontend
+function smartwp_remove_wp_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
+} 
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );

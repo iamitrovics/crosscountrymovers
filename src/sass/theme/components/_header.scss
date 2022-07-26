@@ -209,28 +209,19 @@
 
 #hero-banner {
 	position: relative;
-	img {
-        width: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-        height: 665px;
-        @include bp(lg-down) {
-            height: 550px;
-        }
-        @include bp(sm-down) {
-            height: 290px;
-        }
-        display: none;
-        &.header-desk {
-            @include bp(lg-up) {
-                display: block;
-            }
-        }
-        &.header-mob {
-            @include bp(lg-down) {
-                display: block;
-            }
-        }
+    height: 650px;
+    background: url('https://crosscountrymovers.com/wp-content/uploads/2022/07/hero-image.webp') no-repeat;
+    background-position: center  center;
+    background-size: cover;
+    @include  bp(lg) {
+        height: 500px;
+    }
+    @include  bp(md) {
+        height: 400px;
+    }
+    @include bp(sm-down) {
+        height: 200px;
+        background:$white!important;
     }
     .caption {
         position: absolute;
@@ -254,10 +245,9 @@
               width: 100%;  
             }
             @include bp(lg-down) {
-                text-align: left;
-                @include centre(y);
-                left: auto;
-                max-width: 50%;
+                text-align: center;
+                @include centre(both);
+                max-width: 90%;
             }
             h1 {
                 font-family: $mark-bold;

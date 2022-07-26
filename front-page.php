@@ -5,7 +5,7 @@
 get_header(); ?>
 
     <header id="hero-banner">
-        <?php
+        <!-- <?php
         $imageID = get_field('hero_image_home');
         $image = wp_get_attachment_image_src( $imageID, 'header-image' );
         $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
@@ -19,7 +19,7 @@ get_header(); ?>
         $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
         ?> 
 
-        <img class="hero-img header-mob" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+        <img class="hero-img header-mob" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" />  -->
 
         <div class="caption">
             <div class="container">
