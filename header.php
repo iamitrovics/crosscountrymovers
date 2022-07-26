@@ -19,6 +19,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="icon" type="image/png"  href="<?php echo get_template_directory_uri(); ?>/img/ico/favicon.png">
+
+	<meta name="google-site-verification" content="MSdNLAFDCTbdriKTqbxez5pxQ30_GFLJ9vqWmUewZOo" />
+	<meta name="ahrefs-site-verification" content="b6d355d34cf2473a151d4e7ec88ef43d1605fe1652e09c0e20b9c0f07a7e0e27">
+
 	<?php if( get_field('head_code_snippet', 'options') ): ?>
 		<?php the_field('head_code_snippet', 'options'); ?>
 	<?php endif; ?>	
