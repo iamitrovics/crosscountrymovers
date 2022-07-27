@@ -10,7 +10,7 @@ get_header(); ?>
             <div class="row">
                 <div class="col-md-10 offset-md-1">
                     <div class="intro">
-                        <h2><?php the_field('main_title_contact_header'); ?></h2>     
+                        <h1><?php the_field('main_title_contact_header'); ?></h1>     
                         <?php the_field('intro_text_contact_header'); ?>   
                     </div>
                     <!-- /.intro -->
